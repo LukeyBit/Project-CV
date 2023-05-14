@@ -19,6 +19,6 @@ I welcome contributions from everyone! If you'd like to contribute to this websi
 Please make sure your code adheres to our code style guidelines, and that all tests pass before submitting a pull request. We'll review your changes as soon as possible and provide feedback if needed.
 
 ## Code of conduct
-Please note that we have a [Code of Conduct](CODE_OF_CONDUCT.md) in place to ensure a welcoming and inclusive community. Please be respectful and follow the code of conduct in all interactions.
+Please note that we have a [Code of Conduct](../CODE_OF_CONDUCT.md) in place to ensure a welcoming and inclusive community. Please be respectful and follow the code of conduct in all interactions.
 
 Thank you for contributing to this website!
