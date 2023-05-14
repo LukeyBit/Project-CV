@@ -29,12 +29,18 @@ To get started, follow these steps:
 * IN_EMAIL: The email address to send emails to
 * PASSWORD: The password of the email address to send emails from
 
-4. Start the development server:
+4. Create a MongoDB database by running the following command in the server directory 
+```bash
+mongod --dbpath ./data/db
+```
+This requires [MongoDB Community Server](https://www.mongodb.com/try/download/community) to be installed
+
+5. Start the development server:
 
 * For the client: cd client && npm run dev
 * For the server: cd server && npm run dev
 
-4. Open http://localhost:3000 in your browser to see the app.
+6. Open http://localhost:3000 in your browser to see the app.
 
 ## Contributing
 
