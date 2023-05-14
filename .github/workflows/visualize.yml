@@ -17,9 +17,4 @@ jobs:
         with:
           output_file: "./.github/images/diagram.svg"
           excluded_paths: "ignore,.github,LICENSE,.gitignore,"
-<<<<<<< HEAD
           excluded_globs: "**/*.{png,ico,md,svg};**/package-lock.json;**/package.json;**/public;/images;**/tsconfig.json"
-          excluded_file_names: "README"
-=======
-          excluded_globs: "**/*.{png,ico,md,svg};**/package-lock.json;**/package.json;**/public;/images;**/tsconfig.json"
->>>>>>> fd2278f (Fixed visualize)
