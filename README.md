@@ -10,7 +10,7 @@ This repository contains a full-stack web application built with Next.js, Expres
 
 To get started, follow these steps:
 
-1. Clone the repository to your local machine: git clone https://github.com/username/project-name.git
+1. Clone the repository to your local machine: git clone https://github.com/LukeyBit/Project-CV.git
 2.Install dependencies for both the client and server:
   * For the client: cd client && npm install
   * For the server: cd server && npm install
