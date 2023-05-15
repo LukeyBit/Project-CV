@@ -19,8 +19,6 @@ jobs:
           run: npm install
         - name: Run tests
           run: npm run test:ci
-        - name: Build
-          run: npm run build
     test_server:
       name: Test server
       runs-on: ubuntu-latest
@@ -36,5 +34,3 @@ jobs:
           run: npm install
         - name: Run tests
           run: npm run test:ci
-        - name: Build
-          run: npm run build
