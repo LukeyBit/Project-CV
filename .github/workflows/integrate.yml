@@ -11,17 +11,15 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: 18.16.0
-            - name: Navigate to client directory
-              run: cd client
             - name: Install dependencies
+              working-directory: ./client
               run: npm install
             - name: Run tests
               run: npm run test:ci
             - name: Build
               run: npm run build
-            - name: Navigate to server directory
-              run: cd ../server
             - name: Install dependencies
+              working-directory: ./server
               run: npm install
             - name: Run tests 
               run: npm run test:ci
