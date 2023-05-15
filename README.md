@@ -14,8 +14,8 @@ To get started, follow these steps:
 
 2. Install dependencies for both the client and server:
 
-* For the client: cd client && npm install
-* For the server: cd server && npm install
+* For the client: `cd client && npm install`
+* For the server: `cd server && npm install`
 
 3. Set the environment variables:
 
