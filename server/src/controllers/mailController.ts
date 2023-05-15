@@ -28,7 +28,6 @@ export function sendMessage(req: Request): ControllerResponse {
         if (err) {
             return { success: false, message: err.message };
         } else {
-            console.log('Email sent:', info);
             return { success: true, message: 'Message sent' };
         }
     });
