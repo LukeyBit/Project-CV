@@ -4,24 +4,37 @@ on:
     pull_request:
         branches: [main]
 jobs:
-    test_pull_request:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 18.16.0
-            - name: Install dependencies
-              working-directory: ./client
-              run: npm install
-            - name: Run tests
-              run: npm run test:ci
-            - name: Build
-              run: npm run build
-            - name: Install dependencies
-              working-directory: ./server
-              run: npm install
-            - name: Run tests 
-              run: npm run test:ci
-            - name: Build 
-              run: npm run build
+    test_client:
+      name: Test client
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: ./client
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+          with:
+              node-version: 18.16.0
+        - name: Install dependencies
+          run: npm install
+        - name: Run tests
+          run: npm run test:ci
+        - name: Build
+          run: npm run build
+    test_server:
+      name: Test server
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: ./server
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+          with:
+              node-version: 18.16.0
+        - name: Install dependencies
+          run: npm install
+        - name: Run tests
+          run: npm run test:ci
+        - name: Build
+          run: npm run build
