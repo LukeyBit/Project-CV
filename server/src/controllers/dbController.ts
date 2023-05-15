@@ -15,7 +15,6 @@ async function saveMessage(req: Request): Promise<ControllerResponse> {
         await newMessage.save();
         return { success: true, message: 'Message saved' };
     } catch (err: any) {
-        console.error(err);
         return { success: false, message: err.message };
     }
 }
