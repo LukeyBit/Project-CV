@@ -1,7 +1,8 @@
 import { Request } from 'express';
-import Message, { IMessage } from '../schemas/messageSchema.js';
+import Message, { IMessage } from '../schemas/messageSchema';
+import { ControllerResponse } from '../routes/messageRouter';
 
-async function createMessage(req: Request): Promise<object>{
+async function saveMessage(req: Request): Promise<ControllerResponse> {
     try {
         const { firstName, lastName, email, message }: any = req.body;
         const newMessage: IMessage = new Message({
@@ -12,11 +13,11 @@ async function createMessage(req: Request): Promise<object>{
             timestamp: Date.now(),
         });
         await newMessage.save();
-        return { success: true, message: 'Message sent' };
+        return { success: true, message: 'Message saved' };
     } catch (err: any) {
         console.error(err);
         return { success: false, message: err.message };
     }
 }
 
-export { createMessage };
+export { saveMessage };

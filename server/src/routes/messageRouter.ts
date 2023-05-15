@@ -1,42 +1,28 @@
 import express, { Request, Response } from 'express';
-import { createTransport, SendMailOptions, Transporter } from 'nodemailer';
-import { createMessage } from '../controllers/messageController.js';
+import { saveMessage } from '../controllers/dbController';
+import { sendMessage } from '../controllers/mailController';
+
+
+export interface ControllerResponse {
+    success: boolean;
+    message: string;
+}
 
 const router = express.Router();
 
-router.post('/', (req: Request, res: Response) => {
-    createMessage(req);
+router.post('/', async (req: Request, res: Response) =>{
+    const dbRes: ControllerResponse = await saveMessage(req);
+    const mailRes: ControllerResponse = sendMessage(req);
 
-    const transporter: Transporter = createTransport({
-        host: process.env.SMTP_HOST || '',
-        port: Number(process.env.SMTP_PORT) || 0,
-        secure: true,
-        auth: {
-            user: process.env.OUT_EMAIL || '',
-            pass: process.env.PASSWORD || '',
-        }
-    });
-
-    const mailOptions: SendMailOptions = {
-        from: process.env.OUT_EMAIL || '',
-        to: process.env.IN_EMAIL || '',
-        subject: `New message from ${req.body.firstName} ${req.body.lastName}`,
-        text: `
-            Name: ${req.body.firstName} ${req.body.lastName}
-            Email: ${req.body.email}
-            Message: ${req.body.message}
-            `
-    };
-
-    transporter.sendMail(mailOptions, (err, info) => {
-        if (err) {
-            console.error(err);
-            res.status(500).json({ success: false, message: 'Message not sent' });
-        } else {
-            console.log('Email sent:', info);
-            res.status(200).json({ success: true, message: 'Message sent' });
-        }
-    });
+    if (dbRes.success && mailRes.success) {
+        res.status(200).json({ message: 'Message sent and saved' });
+    } else if (dbRes.success && !mailRes.success) {
+        res.status(200).json({ message: 'Message saved' });
+    } else if (!dbRes.success && mailRes.success) {
+        res.status(200).json({ message: 'Message sent' });
+    } else if (!dbRes.success && !mailRes.success) {
+        res.status(500).json({ message: 'Message not sent or saved' });
+    }
 });
 
 export default router;

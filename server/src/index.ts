@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { rateLimit } from 'express-rate-limit';
-import messageRouter from './routes/messageRouter.js';
+import messageRouter from './routes/messageRouter';
 
 dotenv.config();
 
@@ -25,6 +25,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/message', messageRouter)
+
+export default { app };
 
 if (MONGO_URI === '') {
     console.error('Please set MONGO_URI in .env');
