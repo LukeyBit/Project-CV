@@ -1,0 +1,48 @@
+name: Feature Request
+description: Suggest a new feature
+title: "[Feature]: "
+labels: ["feature", "triage"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: In what area of the application would the feature be implemented?
+      options:
+        - CD/CI
+        - Client (front-end)
+        - Server (back-end)
+        - Database
+    validations:
+      required: true
+  - type: textarea
+    id: feature
+    attributes:
+      label: What is the feature?
+      description: What functionality would you like to see added/changed and where in the application?
+      placeholder: Tell us what you want to see!
+      value: "A great feature!"
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
