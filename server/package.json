@@ -4,6 +4,7 @@
   "description": "A Express server for the Next.js app",
   "main": "index.js",
   "scripts": {
+    "test:ci": "jest --ci --coverage",
     "test": "jest --coverage",
     "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --ignore \"src/**/*.spec.ts\" --exec \"ts-node src/index.ts\"",
     "build": "tsc"
