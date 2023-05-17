@@ -20,9 +20,9 @@ export default function Navbar() {
                 </button>
             </div>
             <div className={`md:flex md:items-center text-white mr-6 gap-4 text-lg ${open ? 'flex flex-col mt-4' : 'hidden'}`}>
-                <Link href='/Contact' className='text-white hover:text-gray-800 md:text-gray-800 md:hover:bg-gray-300 md:bg-white md:p-2 md:rounded'>Contact</Link>
-                <Link href='/Portfolio' className='text-white hover:text-gray-800 md:text-gray-800 md:hover:bg-gray-300 md:bg-white md:p-2 md:rounded'>Portfolio</Link>
-                <Link href='/Resume' className='text-white hover:text-gray-800 md:text-gray-800 md:hover:bg-gray-300 md:bg-white md:p-2 md:rounded'>Resume</Link>
+                <Link href='/Contact' className='text-white hover:text-gray-800 font-semibold'>Contact</Link>
+                <Link href='/Portfolio' className='text-white hover:text-gray-800 font-semibold'>Portfolio</Link>
+                <Link href='/Resume' className='text-white hover:text-gray-800 font-semibold'>Resume</Link>
             </div>
         </nav>
     );
