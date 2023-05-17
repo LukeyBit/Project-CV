@@ -1,12 +1,12 @@
-import Image from 'next/image'
-
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <div className='flex flex-col items-center justify-center gap-4 container-glass p-12 pb-14'>
-        <h1 className='text-6xl font-bold'>Lukas Andersson</h1>
-        <h2 className='text-4xl font-semibold'>Curriculum Vitae</h2>
-        <article className='flex flex-col gap-2 w-[70%]'>
+    <main className='flex min-h-screen flex-col items-center justify-between lg:p-16 py-8'>
+      <div className='container-glass flex flex-col items-center justify-center gap-6 w-full md:w-[90%] lg:w-[70%] px-6 py-10 lg:p-14'>
+        <div className='flex flex-col items-center justify-center'>
+          <h1 className='text-4xl lg:text-6xl font-bold'>Lukas Andersson</h1>
+          <h2 className='text-2xl lg:text-4xl font-semibold'>Curriculum Vitae</h2>
+        </div>
+        <article className='flex flex-col gap-4 w-full'>
           <div>
             <h3 className='text-2xl font-semibold'>Professional Ambitions</h3>
             <p className='text-lg'>To gain experience and learn about the working world. To contribute to a positive work environment and help the workplace achieve its goals.</p>
