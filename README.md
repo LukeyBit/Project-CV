@@ -85,5 +85,13 @@ This requires [MongoDB Community Server](https://www.mongodb.com/try/download/co
 We welcome contributions from everyone! Before getting started, please read our [Code of Conduct](./CODE_OF_CONDUCT.md) and [Contribution](.github/CONTRIBUTING.md) guidelines.
 
 ## License
-This project is licensed under the [![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+This project is licensed under the [MIT License](./LICENSE).
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+
+## Contact
+
+If you wish to contact me, the creator of the repository, you can do so through Reddit at [u/LukeyBit](https://www.reddit.com/user/LukeyBit).
+
+[![Reddit user LukeyBit](https://img.shields.io/badge/Follow%20me-reddit-red)](https://www.reddit.com/user/LukeyBit)
 
