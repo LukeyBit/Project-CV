@@ -93,5 +93,5 @@ This project is licensed under the [MIT License](./LICENSE).
 
 If you wish to contact me, the creator of the repository, you can do so through Reddit at [u/LukeyBit](https://www.reddit.com/user/LukeyBit).
 
-[![Reddit user LukeyBit](https://img.shields.io/badge/Follow%20me-reddit-red)](https://www.reddit.com/user/LukeyBit)
+[![Reddit user LukeyBit](https://img.shields.io/badge/Follow%20me-Reddit-red?logo=reddit&logoColor=white)](https://www.reddit.com/user/LukeyBit)
 
