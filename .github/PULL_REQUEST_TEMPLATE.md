@@ -1,6 +1,6 @@
-# [Bug fix]: Feature Name
+# [Bug fix]: Bug fix name / [Feature]: Feature name
 
-Describe the bug being fixed.
+Describe the bug being fixed or feature being added.
 
 ## Related Issue
 
@@ -14,7 +14,7 @@ Describe the changes made to the codebase. Be as detailed as possible.
 
 ## Screenshots
 
-If applicable, include screenshots of the bug fix.
+If applicable, include screenshots of the bug fix or feature.
 
 ## Checklist
 
