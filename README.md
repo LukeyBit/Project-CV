@@ -4,25 +4,17 @@ This repository contains a full-stack web application built with Next.js, Expres
 
 ## Front-end
 
-This repository contains a Next.js 13 app, which is a powerful React framework for building modern web applications. It combines the simplicity of React with server-side rendering, automatic code splitting, and optimized performance. The Next.js app is located in the client directory. Unit tests are implemented using Jest.
+This repository contains a Next.js 13 app, which is a powerful React framework for building modern web applications. It combines the simplicity of React with server-side rendering, automatic code splitting, and optimized performance. The Next.js app is located in the client directory. As the app is built using Next.js 13 and is meant to be a example for other developers, the routing is done using the, now recommended, app router. Unit tests are implemented using Jest.
 
-The app includes the following pages:
+### Pages
 
-### Home
+- **Home**: The home page serves as the landing page for the website, providing an introduction and overview of your personal brand or the purpose of the website.
 
-The home page serves as the landing page for the website, providing an introduction and overview of your personal brand or the purpose of the website.
+- **Resume**: The resume page showcases your professional experience, skills, education, and any other relevant information to highlight your qualifications.
 
-### Resume
+- **Portfolio**: The portfolio page displays a collection of your work, such as projects, case studies, or creative endeavors. It provides visitors with an opportunity to explore and learn more about your previous achievements.
 
-The resume page showcases your professional experience, skills, education, and any other relevant information to highlight your qualifications.
-
-### Portfolio
-
-The portfolio page displays a collection of your work, such as projects, case studies, or creative endeavors. It provides visitors with an opportunity to explore and learn more about your previous achievements.
-
-### Contact
-
-The contact page allows visitors to reach out to you. It typically includes a contact form where users can submit inquiries, messages, or requests. The submitted contact form messages are stored in a MongoDB database by the back-end server and can be sent to an email address through the specified SMTP server in the .env file in the server.
+- **Contact**: The contact page allows visitors to reach out to you. It typically includes a contact form where users can submit inquiries, messages, or requests. The submitted contact form messages are stored in a MongoDB database by the back-end server and can be sent to an email address through the specified SMTP server in the .env file in the server.
 
 Feel free to customize and expand these pages to suit your specific needs. Each page can be further enhanced with additional components, styling, and functionality to create a personalized and engaging user experience.
 
