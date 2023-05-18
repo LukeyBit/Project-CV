@@ -17,9 +17,6 @@ router.post('/', async (req: Request, res: Response) =>{
     const mailRes: ControllerResponse = sendMessage(req);
     const dbRes: ControllerResponse = await saveMessage(req);
 
-    console.log(mailRes);
-    console.log(dbRes);
-
     if (dbRes.success && mailRes.success) {
         return res.status(200).json({ message: 'Message sent and saved' });
     } else if (dbRes.success && !mailRes.success) {
