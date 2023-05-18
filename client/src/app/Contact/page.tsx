@@ -11,9 +11,7 @@ export default function Contact() {
 
     async function handleSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         event.preventDefault();
-        console.log(formData);
         const response = await axios.post('http://localhost:5000/message', formData);
-        console.log(response);
     }
     return (
         <main className='flex min-h-screen flex-col items-center justify-between lg:p-16 py-8'>
