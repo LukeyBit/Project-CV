@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Resume from '../page';
+import Resume from '@/app/Resume/page';
 
 describe('Resume', () => {
     it('renders a main element', () => {

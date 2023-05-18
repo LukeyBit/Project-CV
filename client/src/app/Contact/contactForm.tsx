@@ -1,9 +1,11 @@
 'use client';
 import axios from 'axios';
 import { useState } from 'react';
+import { useAlert } from '@/hooks/useAlert';
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', message: '' });
+    const { addAlert } = useAlert();
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -11,7 +13,18 @@ export default function ContactForm() {
 
     async function handleSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         event.preventDefault();
-        const response = await axios.post('http://localhost:5000/message', formData);
+        try {
+            const response = await axios.post('http://localhost:5000/message', formData);
+            if (response.status === 200) {
+                addAlert({ id: 'alert', message: 'Message sent successfully', type: 'success', className: '' });
+            } else if (response.status === 400) {
+                addAlert({ id: 'alert', message: response.data.message , type: 'warning', className: '' });
+            } else {
+                addAlert({ id: 'alert', message: 'Something went wrong', type: 'error', className: '' });
+            }
+        } catch (error) {
+            addAlert({ id: 'alert', message: 'Something went wrong', type: 'error', className: '' });
+        }
     }
     
     return (
