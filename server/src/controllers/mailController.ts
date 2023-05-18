@@ -5,7 +5,7 @@ import { ControllerResponse } from '../routes/messageRouter';
 export function sendMessage(req: Request): ControllerResponse {
     const transporter: Transporter = createTransport({
         host: process.env.SMTP_HOST || '',
-        port: Number(process.env.SMTP_PORT) || 465,
+        port: 465,
         secure: true,
         auth: {
             user: process.env.OUT_EMAIL || '',
@@ -27,10 +27,8 @@ export function sendMessage(req: Request): ControllerResponse {
     transporter.sendMail(mailOptions, (err, info) => {
         if (err) {
             return { success: false, message: err.message };
-        } else {
-            return { success: true, message: 'Message sent' };
         }
+        return { success: true, message: info };
     });
-
-    return { success: false, message: 'Message not sent' };
+    return { success: true, message: 'Message sent' };
 }

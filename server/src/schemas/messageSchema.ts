@@ -16,6 +16,6 @@ export interface IMessage extends Document {
     timestamp: Date;
 }
 
-const Message = mongoose.model<IMessage>('Message', messageSchema);
+const Message = mongoose.model<IMessage>('Message', messageSchema, 'messages');
 
 export default Message;

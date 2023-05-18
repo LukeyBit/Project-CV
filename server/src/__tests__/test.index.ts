@@ -1,4 +1,4 @@
-import app from '../server';
+import app from '../index';
 import supertest from 'supertest';
 
 describe('Test the root path', () => {
