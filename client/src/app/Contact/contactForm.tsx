@@ -1,7 +1,7 @@
 'use client';
 import axios from 'axios';
 import { useState } from 'react';
-import { useAlert } from '@/hooks/useAlert';
+import useAlert from '@/hooks/useAlert';
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', message: '' });

@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, FC } from 'react';
 import { IAlert } from '@/contexts/alertContext';
-import { useAlert } from '@/hooks/useAlert';
+import useAlert from '@/hooks/useAlert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX, faExclamation } from '@fortawesome/free-solid-svg-icons';
 
