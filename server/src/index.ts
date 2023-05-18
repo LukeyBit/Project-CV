@@ -24,8 +24,6 @@ if (MONGO_URL === '') {
     process.exit(1);
 }
 
-console.log(MONGO_URL)
-
 mongoose.connect(MONGO_URL)
 .then((conn) => {
     console.log('MongoDB connected');
