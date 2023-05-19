@@ -33,8 +33,8 @@ const Alert: FC<IAlertProps> = ({ id }) => {
                 <div key={alert.id} className={`flex flex-row items-center justify-between w-[300px] h-[100px] container-alert rounded-md p-4 ${'bg-'+ alert.type} bg-opacity-25 ${alert.className}`} role='alert'>
                     <FontAwesomeIcon icon={faExclamation} className='w-8 h-8' />
                     <p data-testid='alert-message' className='flex-1'>{alert.message}</p>
-                    <button className='w-8 h-8' onClick={() => removeAlert(alert)}>
-                        <FontAwesomeIcon icon={faX} className='w-8 h-8' data-testid='dismiss'/>
+                    <button className='w-8 h-8' onClick={() => removeAlert(alert)} data-testid='alert-dismiss'>
+                        <FontAwesomeIcon icon={faX} className='w-8 h-8'/>
                     </button>
                 </div>
             ))}
