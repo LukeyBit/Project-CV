@@ -7,7 +7,7 @@ export interface IAlert {
     id: string;
 }
 
-interface IAlertContext {
+export interface IAlertContext {
     alerts: IAlert[];
     addAlert: (alert: IAlert) => void;
     removeAlert: (alert: IAlert) => void;
