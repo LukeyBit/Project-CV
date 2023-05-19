@@ -1,4 +1,4 @@
-import { FC, ReactNode, ReactElement } from 'react';
+import { FC, ReactNode } from 'react';
 import AlertProvider from '@/providers/alertProvider';
 import { IAlertContext } from '@/contexts/alertContext';
 import { render } from '@testing-library/react';
