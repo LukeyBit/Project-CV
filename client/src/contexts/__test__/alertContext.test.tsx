@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 import AlertProvider from '@/providers/alertProvider';
-import { IAlert, IAlertContext } from '@/contexts/alertContext';
+import { IAlert, IAlertContext } from '@/types';
 import { render } from '@testing-library/react';
 import useAlert from '@/hooks/useAlert';
 import { act } from 'react-dom/test-utils';

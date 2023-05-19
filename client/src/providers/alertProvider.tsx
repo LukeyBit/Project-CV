@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useMemo, FC } from 'react';
-import { IAlert, AlertContext } from '@/contexts/alertContext';
+import { AlertContext } from '@/contexts/alertContext';
+import { IAlert } from '@/types';
 
 interface AlertProviderProps {
     children: React.ReactNode;
