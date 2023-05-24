@@ -11,22 +11,24 @@ export default function ContactForm() {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     }
 
-    async function handleSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    function handleSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
         event.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:5000/message', formData);
-            if (response.status === 200) {
-                addAlert({ id: 'alert', message: 'Message sent successfully', type: 'success', className: '' });
-            } else if (response.status === 400) {
-                addAlert({ id: 'alert', message: response.data.message , type: 'warning', className: '' });
-            } else {
+        axios.post('http://localhost:5000/message', formData)
+            .then(response => {
+                if (response.status === 200) {
+                    addAlert({ id: 'alert', message: 'Message sent successfully', type: 'success', className: '' });
+                } else if (response.status === 400) {
+                    addAlert({ id: 'alert', message: response.data.message, type: 'warning', className: '' });
+                } else {
+                    addAlert({ id: 'alert', message: 'Something went wrong', type: 'error', className: '' });
+                }
+            })
+            .catch(error => {
+                console.error(error);
                 addAlert({ id: 'alert', message: 'Something went wrong', type: 'error', className: '' });
-            }
-        } catch (error) {
-            addAlert({ id: 'alert', message: 'Something went wrong', type: 'error', className: '' });
-        }
+            });
     }
-    
+
     return (
         <form className='container-glass flex flex-col items-center justify-center gap-8 w-full md:w-[90%] lg:w-[70%] px-6 py-10 lg:p-14'>
             <div className='flex flex-col items-center justify-center mb-4'>

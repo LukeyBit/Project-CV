@@ -1,22 +1,33 @@
-// TODO Unit test for contactForm
-
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Contact from '@/app/Contact/page';
+import userEvent from '@testing-library/user-event';
+import axios from 'axios';
+import ContactForm from '@/app/Contact/contactForm';
 
 jest.mock('axios');
 
-describe('Contact', () => {
-    it('renders a main element', () => {
-        render(<Contact />);
-        expect(screen.getByRole('main')).toBeInTheDocument();
-    });
-    it('renders a main element with a flexbox', () => {
-        render(<Contact />);
-        expect(screen.getByRole('main')).toHaveClass('flex');
-    });
-    it('renders a main element with a flexbox with a minimum height of 100vh', () => {
-        render(<Contact />);
-        expect(screen.getByRole('main')).toHaveClass('min-h-screen');
+const useAlert = jest.fn(() => ({
+    addAlert: jest.fn()
+}));
+
+describe('ContactForm', () => {
+    it('calls axios.post when contactForm is submitted', async () => {
+        const formData = {
+            firstName: 'John',
+            lastName: 'Doe',
+            email: 'johndoe@example.com',
+            message: 'Hello World!',
+        };
+        (axios.post as jest.MockedFunction<typeof axios.post>).mockResolvedValue({ status: 200 });
+        render(<ContactForm />);
+        await userEvent.type(screen.getByLabelText(/first name/i), formData.firstName);
+        await userEvent.type(screen.getByLabelText(/last name/i), formData.lastName);
+        await userEvent.type(screen.getByLabelText(/email/i), formData.email);
+        await userEvent.type(screen.getByLabelText(/message/i), formData.message);
+        await userEvent.click(screen.getByRole('button', { name: /send/i }));
+        expect(axios.post).toHaveBeenCalledWith(
+            'http://localhost:5000/message',
+            formData,
+        );
     });
 });
