@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "A Express server for the Next.js app",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test:ci": "jest --ci --coverage",
+    "test:ci": "jest --ci --forceExit --detectOpenHandles --coverage",
     "test": "jest --coverage",
     "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --ignore \"src/**/*.spec.ts\" --exec \"ts-node src/index.ts\"",
     "build": "tsc"

@@ -12,7 +12,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav data-test-id='nav' className='flex flex-col md:flex-row md:items-center justify-between container-glass rounded-t-none p-6 md'>
+        <nav data-testid='nav' className='flex flex-col md:flex-row md:items-center justify-between container-glass rounded-t-none p-6 md'>
             <div className='flex flex-row justify-between items-center text-white mr-6'>
                 <Link href='/' className='font-semibold text-2xl tracking-tight hover:text-gray-800'>Lukas Andersson</Link>
                 <button className='md:hidden flex items-center px-3 py-2 border-2 rounded text-white border-white hover:text-gray-800 hover:bg-white' onClick={toggleOpen}>

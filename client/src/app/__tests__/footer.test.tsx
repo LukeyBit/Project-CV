@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Footer from '../Footer';
+import Footer from '@/app/footer';
 
 describe('Footer', () => {
     it('renders a footer', () => {
