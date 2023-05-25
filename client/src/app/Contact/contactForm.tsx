@@ -13,7 +13,7 @@ export default function ContactForm() {
 
     function handleSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
         event.preventDefault();
-        axios.post('http://localhost:5000/message', formData)
+        axios.post(process.env.NEXT_PUBLIC_API_URL || 'not-a-real-url', formData)
             .then(response => {
                 if (response.status === 200) {
                     addAlert({ id: 'alert', message: 'Message sent successfully', type: 'success', className: '' });

@@ -14,7 +14,7 @@ const limiter = rateLimit({
 
 const app = express();
 
-dotenv.config({ path: '.env' });
+dotenv.config({ path: '.env.local' });
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URL = process.env.MONGO_URL || '';

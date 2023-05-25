@@ -26,7 +26,7 @@ describe('ContactForm', () => {
         await userEvent.type(screen.getByLabelText(/message/i), formData.message);
         await userEvent.click(screen.getByRole('button', { name: /send/i }));
         expect(axios.post).toHaveBeenCalledWith(
-            'http://localhost:5000/message',
+            'not-a-real-url',
             formData,
         );
     });
