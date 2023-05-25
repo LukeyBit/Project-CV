@@ -14,6 +14,6 @@
     "noImplicitAny": true,
     "skipLibCheck": true
   },
-  "exclude": ["./coverage", "./dist", "__tests__", "jest.config.js", "node_modules"],
+  "exclude": ["./coverage", "./dist", "jest.config.js", "node_modules"],
   "include": ["./src", "**/*.ts", "**/*.js"]
 }
