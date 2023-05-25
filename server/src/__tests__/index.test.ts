@@ -9,7 +9,6 @@ jest.mock('mongoose', () => {
     };
 });
 
-
 describe('Test the root path', () => {
     test('It should respond 400 with a message to the empty POST method', async () => {
         const response = await supertest(app).post('/message');

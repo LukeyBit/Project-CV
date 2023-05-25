@@ -19,11 +19,6 @@ dotenv.config({ path: '.env.local' });
 const PORT = process.env.PORT || 5000;
 const MONGO_URL = process.env.MONGO_URL || '';
 
-if (MONGO_URL === '') {
-    console.error('Please set MONGO_URL in .env');
-    process.exit(1);
-}
-
 mongoose.connect(MONGO_URL)
 .then((conn) => {
     console.log('MongoDB connected');
