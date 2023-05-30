@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test:ci": "jest --ci --forceExit --detectOpenHandles",
-    "test": "jest --watch --detectOpenHandles",
+    "test": "jest --watchAll --detectOpenHandles",
     "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --ignore \"src/**/*.spec.ts\" --exec \"ts-node src/index.ts\"",
     "build": "tsc"
   },
