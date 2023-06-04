@@ -131,3 +131,6 @@ dist
 
 # MongoDB database files
 */data/db/
+
+# Unlighthouse files
+.unlighthouse
