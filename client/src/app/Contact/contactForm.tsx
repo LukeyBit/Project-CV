@@ -1,19 +1,33 @@
 'use client';
 import axios from 'axios';
 import { useState } from 'react';
+import ReCaptcha from 'react-google-recaptcha';
 import useAlert from '@/hooks/useAlert';
 
 export default function ContactForm() {
-    const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', message: '' });
+    const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', message: '', token: '' });
     const { addAlert } = useAlert();
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     }
 
+    function handleCaptchaChange(token: string | null) {
+        if (token != null) setFormData({ ...formData, token: token });
+        if (token == null) setFormData({ ...formData, token: '' });
+    }
+
     function handleSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
         event.preventDefault();
-        axios.post(process.env.NEXT_PUBLIC_API_URL || 'not-a-real-url', formData)
+        if (formData.token === '') {
+            addAlert({ id: 'alert', message: 'Please complete the captcha', type: 'warning', className: '' });
+            return;
+        } else if (formData.firstName === '' || formData.lastName === '' || formData.email === '' || formData.message === '') {
+            addAlert({ id: 'alert', message: 'Please fill out all fields', type: 'warning', className: '' });
+            return;
+        }
+        
+        axios.post(process.env.NEXT_PUBLIC_API_URL ?? 'not-a-real-url', formData)
             .then(response => {
                 if (response.status === 200) {
                     addAlert({ id: 'alert', message: 'Message sent successfully', type: 'success', className: '' });
@@ -49,13 +63,16 @@ export default function ContactForm() {
             </div>
             <div className='w-full px-4 text-xl'>
                 <label className='ml-4' htmlFor='email'>Email</label>
-                <input className='w-full h-12 container-glass px-4 focus:border-1 focus:border-white' placeholder='Email' name='email' type='email' id='email' required onChange={handleChange}>
+                <input className='w-full h-12 container-glass px-4 focus:border-1 focus:border-white' placeholder='Email' name='email' type='email' id='email' required onChange={handleChange} autoComplete='true'>
                 </input>
             </div>
             <div className='w-full px-4 text-xl'>
                 <label className='ml-4' htmlFor='message'>Message</label>
                 <textarea className='w-full h-48 container-glass px-4 pt-1 focus:border-1 focus:border-white resize-y' placeholder='Message' name='message' id='message' required onChange={handleChange}>
                 </textarea>
+            </div>
+            <div className='min-h-18'>
+                <ReCaptcha sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? 'not-a-real-key'} onChange={handleCaptchaChange} />
             </div>
             <button className='w-[50%] h-12 container-glass px-4 focus:border-1 focus:border-white hover:border-1 hover:border-white hover:text-gray-800' type='button' onClick={handleSubmit}>Send</button>
         </form>
