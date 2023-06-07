@@ -18,7 +18,7 @@ export default function Home() {
           <h1 className='text-4xl lg:text-6xl font-bold'>Website</h1>
         </div>
       </div>
-      <div className='container-glass flex flex-col items-center justify-center gap-6 w-full md:w-[90%] lg:w-[70%] px-6 pt-10 pb-6 lg:pt-14 pb-8'>
+      <div className='container-glass flex flex-col items-center justify-center gap-6 w-full md:w-[90%] lg:w-[70%] px-6 pt-10 pb-6 lg:pt-14 lg:pb-8'>
         <div className='flex flex-col items-center justify-center'>
           <h1 className='block md:hidden text-center text-4xl lg:text-6xl font-bold'>Welcome to my website</h1>
           <h2 className='text-2xl lg:text-4xl font-semibold mb-6'>Lukas Andersson</h2>
