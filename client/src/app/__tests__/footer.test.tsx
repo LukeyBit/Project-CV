@@ -14,6 +14,6 @@ describe('Footer', () => {
     });
     it('renders a footer with a link to my github with the text @LukeyBit', () => {
         render(<Footer />);
-        expect(screen.getByText('@LukeyBit')).toBeInTheDocument();
+        expect(screen.getByText('/LukeyBit')).toBeInTheDocument();
     });
 });
